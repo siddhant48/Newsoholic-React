@@ -9,8 +9,16 @@ export default class NewsItem extends Component {
     //  let {title,description,imgUrl,newsUrl} = this.props;
     return (
       <div className="card" style={{ margin: "20px 0px" }}>
-        {this.props.author && <span className="position-absolute top-0 translate-middle badge rounded-pill bg-danger" style={{ left: '80%', zIndex: '1' }}> {this.props.author}
-        </span>}
+        <div style={{
+          display: 'flex',
+          justifyContent: 'flex-end',
+          position: 'absolute',
+          right: '0'
+        }
+        }>
+
+          <span className="badge rounded-pill bg-danger"> {this.props.author} </span>
+        </div>
         <img src={this.props.imgUrl} className="card-img-top" alt="..." />
         <div className="card-body" style={{ margin: "50px" }}>
           <h5 className="card-title">{this.props.title}</h5>
